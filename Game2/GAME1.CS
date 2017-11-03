@@ -88,7 +88,7 @@ namespace Game2
         }
         protected override void Draw(GameTime gameTime)
         {
-            
+            graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             player.Draw(spriteBatch);
             spriteBatch.End();

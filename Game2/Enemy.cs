@@ -6,38 +6,35 @@ namespace Game2
 {
     class Enemy
     {
-        public Animator EnemyAnimation;
-        public Vector2 Position;
-        public bool Active;
-        public float Health = 100;
-        public float Damage = 100;
-        public int Width;
-        public int Height;
-        float enemyMoveSpeed;
+        private Animator enemyAnimator;
+        private Vector2 mPosition;
+        private Vector2 mVelocity;
+        private Texture2D mTexture;
+        private Rectangle mRectangle;
+        private bool mActive;
+        private float mHealth = 100f;
+        private float mDamage = 5f;
 
-        public void Initialize(Animator animation,Vector2 position)
+        public Enemy(Animator animation, Vector2 position)
         {
-            EnemyAnimation = animation;
-            Position = position;
-            Active = true;
-            Health = 100;
-            Damage = 5;
-            enemyMoveSpeed = 6f;
+            enemyAnimator = new Animator(1, 31, 63, 1, 6);
+            mPosition = position;
+            mTexture = TextureDictionary.FindTexture("enemy");
+            mActive = true;
         }
 
         public void Update()
         {
-            EnemyAnimation.Position = Position;
-            EnemyAnimation.Update();
-            if(Health <= 0)
+            mPosition = mPosition * mVelocity * 1 / 60;
+            if (mHealth <= 0)
             {
-                Active = false;
+                mActive = false;
             }
         }
 
-        public void Draw()
+        public void Draw(SpriteBatch pSpriteBatch)
         {
-            EnemyAnimation
+            pSpriteBatch.Draw(mTexture, new Rectangle((int)mPosition.X,(int)mPosition.Y,31,63),mRectangle, Color.White);
         }
     }
 }

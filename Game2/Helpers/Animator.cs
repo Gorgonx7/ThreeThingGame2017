@@ -22,25 +22,33 @@ namespace Game2
 
     class Animator
     {
-        private List<Rectangle> m_Frames;
-        private int m_CurrentFrame;
 
-        public Animator( List<Rectangle> pFrames)
+        private Rectangle[] m_Frames;
+        private int m_CurrentFrame;
+        int mBorder;
+        int mSpriteWidth;
+        int mSpritHeight;
+        int distanceBetween;
+        public Animator(int pBorder, int pSpriteWidth, int pSpriteHeight, int pDistanceBetween, int pNumberOfFrames)
         {
-            
-            m_Frames = pFrames;
-            m_CurrentFrame = 0;
+            m_Frames = new Rectangle[pNumberOfFrames];
+            int current = 0;
+            for(int x = pBorder; x < pNumberOfFrames * pSpriteWidth + pNumberOfFrames * pDistanceBetween; x += (pSpriteWidth + pDistanceBetween))
+            {
+                m_Frames[current] = new Rectangle(x, pBorder, pSpriteWidth, pSpriteHeight);
+                current++;
+            }
+           m_CurrentFrame = 0;
+
         }
 
         public Rectangle NextFrame()
         {
+
+            if (m_CurrentFrame > m_Frames.Length - 1)
+
             if (m_CurrentFrame > m_Frames.Count)
-            {
-                m_CurrentFrame = 0;
-            }
-            Rectangle Holder = m_Frames[m_CurrentFrame];
-            m_CurrentFrame++;
-            return Holder;
+
         }
 
     }

@@ -15,7 +15,11 @@ namespace Game2
         public PlayerController(int PlayerNumber)
         {
             
+
+            /*switch (PlayerNumber)
+
             switch (PlayerNumber)
+
             {
                 case 1:
                     mcapabilities = GamePad.GetCapabilities(Microsoft.Xna.Framework.PlayerIndex.One);
@@ -34,11 +38,11 @@ namespace Game2
             if (!mcapabilities.IsConnected)
             {
                 throw new Exception("Controller Not connected, derp");
-            }
-            
-        }
+ 
+        
        
         public bool UpisDown()
+
         {
             mState = GamePad.GetState(mPlayerIndex);
             if(mState.DPad.Up == ButtonState.Pressed)
@@ -145,6 +149,40 @@ namespace Game2
                 return true;
             }
             return false;
+
+        }*/
+        public bool AKeyisDown()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool SKeyisDown()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool DKeyisDown()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool WKeyisDown()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                return true;
+            }
+            return false;
+
         }
     }
 }

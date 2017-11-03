@@ -25,8 +25,9 @@ namespace Game2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-
+        Enemy enemy;
+        int timer = 0;
+        List<Enemy> enemies = new List<Enemy>();
 
 
         public Game1()
@@ -47,7 +48,9 @@ namespace Game2
         {
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
-            
+
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("NinjaWalk"), "ninjaWalk");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("NinjaIdol"), "ninjaIdol");
             base.Initialize();
         }
 
@@ -58,7 +61,6 @@ namespace Game2
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-
 
         }
 
@@ -79,14 +81,32 @@ namespace Game2
         protected override void Update(GameTime gameTime)
         {
 
+            
+            timer++;
 
-
-
+            
+            if(timer == 300)
+            {
+                enemy = new Enemy(new Vector2(100, 100));
+                enemies.Add(enemy);
+                timer = 0;
+            }
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                enemies[i].Update(new Vector2(0, 0));
+            }
+            
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
-
+            graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin();
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                enemies[i].Draw(spriteBatch);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
 

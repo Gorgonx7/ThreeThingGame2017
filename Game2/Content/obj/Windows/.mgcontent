@@ -5,5 +5,7 @@
   <Config />
   <SourceFiles>
     <File>E:/ThreeThingGame2017-master/branches/tom/Game2/Content/SpriteFont.spritefont</File>
+    <File>E:/ThreeThingGame2017-master/branches/tom/Game2/Content/ninjaWalk.png</File>
+    <File>E:/ThreeThingGame2017-master/branches/tom/Game2/Content/ninjaIdol.png</File>
   </SourceFiles>
 </SourceFileCollection>

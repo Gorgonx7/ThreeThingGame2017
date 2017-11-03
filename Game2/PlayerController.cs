@@ -184,5 +184,13 @@ namespace Game2
             return false;
 
         }
+        public bool leftMouseClick()
+        {
+            if(Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                return true;
+            }
+            return false;  
+        }
     }
 }

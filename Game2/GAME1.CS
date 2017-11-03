@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System;
 using Microsoft.Xna.Framework.Media;
-
+using Microsoft.Xna.Framework.Audio;
 namespace Game2
 {
     /// <summary>
@@ -40,7 +40,8 @@ namespace Game2
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
+            graphics.PreferredBackBufferHeight = 800;
+            graphics.PreferredBackBufferWidth = 1200;
 
 
             graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
@@ -61,6 +62,10 @@ namespace Game2
 
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
             TextureDictionary.AddTexture(Content.Load<Texture2D>("PlayerWalk"), "playerWalk");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("idol"), "playerIdol");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("Backgound1"), "Background");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("playerJab"), "playerJab");
+            AudioDictionary.AddAudio(Content.Load<SoundEffect>("Punch"), "Punch");
             player = new Player(1);
             
 
@@ -125,6 +130,7 @@ namespace Game2
 
             graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
+            spriteBatch.Draw(TextureDictionary.FindTexture("Background"), new Rectangle(0, 0, 1600, 800), new Rectangle(0, 0, 1600, 800), Color.White);
             player.Draw(spriteBatch);
             spriteBatch.End();
 

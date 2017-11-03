@@ -42,8 +42,12 @@
     <Compile Include="Dictionarys\TextureDictionary.cs" />
     <Compile Include="Helpers\Animator.cs" />
     <Compile Include="Helpers\Console.cs" />
+    <Compile Include="Helpers\MainMenu.cs" />
+    <Compile Include="Helpers\Menu.cs" />
+    <Compile Include="Helpers\MenuItem.cs" />
+    <Compile Include="Helpers\MenuManager.cs" />
+    <Compile Include="Helpers\TileSheet.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="PlayerController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\Timer.cs" />

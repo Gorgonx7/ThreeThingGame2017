@@ -46,7 +46,9 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
+            
+            //Content.Load<Texture2D>("assetname");
             base.Initialize();
         }
 

@@ -38,7 +38,7 @@ namespace Game2
             
         }
        
-        public bool dPadUpisDown()
+        public bool UpisDown()
         {
             mState = GamePad.GetState(mPlayerIndex);
             if(mState.DPad.Up == ButtonState.Pressed)
@@ -47,7 +47,7 @@ namespace Game2
             }
             return false;
         }
-        public bool dPadDownisDown()
+        public bool DownisDown()
         {
             mState = GamePad.GetState(mPlayerIndex);
             if (mState.DPad.Down == ButtonState.Pressed)
@@ -56,7 +56,7 @@ namespace Game2
             }
             return false;
         }
-        public bool dPadLeftisDown()
+        public bool LeftisDown()
         {
             mState = GamePad.GetState(mPlayerIndex);
             if (mState.DPad.Left == ButtonState.Pressed)
@@ -65,7 +65,7 @@ namespace Game2
             }
             return false;
         }
-        public bool dPadRightisDown()
+        public bool RightisDown()
         {
             mState = GamePad.GetState(mPlayerIndex);
             if (mState.DPad.Right == ButtonState.Pressed)

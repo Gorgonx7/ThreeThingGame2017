@@ -48,7 +48,10 @@ namespace Game2
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
             
-            //Content.Load<Texture2D>("assetname");
+            Content.Load<Texture2D>("advnt_full.png");
+            Content.Load<Texture2D>("creatures edit_0.png");
+            Content.Load<Texture2D>("frameGuide.png");
+            Content.Load<Texture2D>("ninja_full.png");
             base.Initialize();
         }
 

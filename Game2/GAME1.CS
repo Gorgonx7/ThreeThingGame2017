@@ -25,7 +25,14 @@ namespace Game2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
         Player player;
+
+        SpriteFont menuFont;
+        Texture2D mainMenu, pauseMenu, deathScreen, background, oldStinker;
+        // SoundEffect ;
+        // Song ;
+
 
 
 
@@ -33,6 +40,11 @@ namespace Game2
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+
+
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.mDimensions.Y;
 
         }
 
@@ -46,10 +58,17 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
             TextureDictionary.AddTexture(Content.Load<Texture2D>("PlayerWalk"), "playerWalk");
             player = new Player(1);
             
+
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.mDimensions.Y;
+
+            //Content.Load<Texture2D>("assetname");
+
             base.Initialize();
         }
 
@@ -62,6 +81,11 @@ namespace Game2
             // Create a new SpriteBatch, which can be used to draw textures.
 
 
+
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            ScreenManager.Instance.LoadContent(Content);
+
+
         }
 
         /// <summary>
@@ -71,6 +95,10 @@ namespace Game2
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+
+
+            ScreenManager.Instance.UnloadContent();
+
         }
 
         /// <summary>
@@ -82,19 +110,29 @@ namespace Game2
         {
 
 
+
             player.Update();
+
+            ScreenManager.Instance.Update(gameTime);
+
+
+
 
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
+
             graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             player.Draw(spriteBatch);
             spriteBatch.End();
+
+            GraphicsDevice.Clear(Color.Magenta);
+            ScreenManager.Instance.Draw(spriteBatch);
+
             base.Draw(gameTime);
         }
-
 
 
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+
 using Microsoft.Xna.Framework.Graphics;
 namespace Game2
 {
@@ -51,6 +52,8 @@ namespace Game2
         public void Update()
         {
             mPosition = mPosition * mVelocity * 1 / 60;
+
+
         }
     }
 }

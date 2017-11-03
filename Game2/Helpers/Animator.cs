@@ -22,6 +22,7 @@ namespace Game2
 
     class Animator
     {
+
         private Rectangle[] m_Frames;
         private int m_CurrentFrame;
         int mBorder;
@@ -38,17 +39,16 @@ namespace Game2
                 current++;
             }
            m_CurrentFrame = 0;
+
         }
 
         public Rectangle NextFrame()
         {
+
             if (m_CurrentFrame > m_Frames.Length - 1)
-            {
-                m_CurrentFrame = 0;
-            }
-            Rectangle Holder = m_Frames[m_CurrentFrame];
-            m_CurrentFrame++;
-            return Holder;
+
+            if (m_CurrentFrame > m_Frames.Count)
+
         }
 
     }

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spaceship", "Game2\spaceship.csproj", "{68C7794F-28B3-4446-8B69-0C699706312C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2T1G", "Game2\2T1G.csproj", "{68C7794F-28B3-4446-8B69-0C699706312C}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,7 +18,7 @@ Global
 		{68C7794F-28B3-4446-8B69-0C699706312C}.Release|x86.ActiveCfg = Release|x86
 		{68C7794F-28B3-4446-8B69-0C699706312C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B6C878D-564F-4869-B3A6-0AAEBF8399D6}
 	EndGlobalSection
 EndGlobal

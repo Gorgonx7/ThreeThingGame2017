@@ -88,7 +88,7 @@ namespace Game2
             KeyboardState state = Keyboard.GetState();
             if (state.IsKeyDown(Keys.A))
             {
-                Game1.setGameState(Game1.GameState.Pilot);
+               
             }
         }
 
@@ -102,7 +102,7 @@ namespace Game2
             {
                 case 0:
                     currentNumberofPlayers = 1;
-                    Game1.setGameState(Game1.GameState.Pilot);
+                
                     break;
                 case 1:
                     CurrentMenu = SubMenu.Lobby;

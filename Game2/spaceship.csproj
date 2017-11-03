@@ -43,19 +43,11 @@
     <Compile Include="Helpers\Animator.cs" />
     <Compile Include="Helpers\Console.cs" />
     <Compile Include="Helpers\MainMenu.cs" />
-    <Compile Include="Helpers\Player.cs" />
-    <Compile Include="ShipView\ShipManager.cs" />
     <Compile Include="Helpers\TileSheet.cs" />
-    <Compile Include="Helpers\Tile.cs" />
-    <Compile Include="Viewer\Meteor.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Viewer\PilotMannager.cs" />
-    <Compile Include="Viewer\Ship.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Viewer\Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\Timer.cs" />
-    <Compile Include="Viewer\Viewer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Lidgren.Network, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL" />

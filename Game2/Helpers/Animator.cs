@@ -42,7 +42,7 @@ namespace Game2
 
         public Rectangle NextFrame()
         {
-            if (m_CurrentFrame > m_Frames.Length)
+            if (m_CurrentFrame > m_Frames.Length - 1)
             {
                 m_CurrentFrame = 0;
             }

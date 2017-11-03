@@ -13,15 +13,20 @@ namespace Game2
         PlayerController mControler;
         private Vector2 mPosition;
         private Vector2 mVelocity;
-        private Texture2D mTexture;
+        private Texture2D mWalkTexture;
         private Rectangle mRectange;
         private float mHealth = 100f;
         private int playerNumber;
+        private Animator mAnimator;
+
+        //18 / 46
+        //31, 63
         public Player(int pplayerNumber)
         {
             playerNumber = pplayerNumber;
-            mTexture = TextureDictionary.FindTexture("player");
+            mWalkTexture = TextureDictionary.FindTexture("playerWalk");
             mControler = new PlayerController(pplayerNumber);
+            mAnimator = new Animator(1, 31, 63, 1, 6);
         }
         public void setPosition(Vector2 pVector)
         {
@@ -29,7 +34,7 @@ namespace Game2
         }
         public void Draw(SpriteBatch pSpriteBatch)
         {
-            pSpriteBatch.Draw(mTexture, mRectange, Color.White);
+            pSpriteBatch.Draw(mWalkTexture, new Rectangle((int)mPosition.X,(int)mPosition.Y, 31,63),mAnimator.NextFrame(), Color.White);
         }
         public void Update()
         {

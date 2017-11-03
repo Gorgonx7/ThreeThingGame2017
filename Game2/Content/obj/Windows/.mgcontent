@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/ThreeThingGame2017.git/trunk/Game2/Content/SpriteFont.spritefont</File>
+    <File>E:/ThreeThingGame2017.git/branches/james/Game2/Content/SpriteFont.spritefont</File>
+    <File>E:/ThreeThingGame2017.git/branches/james/Game2/Content/PlayerWalk.png</File>
   </SourceFiles>
 </SourceFileCollection>

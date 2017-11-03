@@ -25,7 +25,7 @@ namespace Game2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        Player player;
 
 
 
@@ -47,11 +47,9 @@ namespace Game2
         {
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("PlayerWalk"), "playerWalk");
+            player = new Player(1);
             
-            Content.Load<Texture2D>("advnt_full.png");
-            Content.Load<Texture2D>("creatures edit_0.png");
-            Content.Load<Texture2D>("frameGuide.png");
-            Content.Load<Texture2D>("ninja_full.png");
             base.Initialize();
         }
 
@@ -84,13 +82,16 @@ namespace Game2
         {
 
 
-
+            player.Update();
 
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
-
+            
+            spriteBatch.Begin();
+            player.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
 

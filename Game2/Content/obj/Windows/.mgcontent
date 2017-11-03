@@ -4,6 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/ThreeThingGame2017.git/trunk/Game2/Content/SpriteFont.spritefont</File>
+    <File>E:/ThreeThingGame2017.git/branches/zak/Game2/Content/SpriteFont.spritefont</File>
+    <File>E:/ThreeThingGame2017.git/branches/zak/Game2/Content/splashscreentest.png</File>
+    <File>E:/ThreeThingGame2017.git/branches/zak/Game2/Content/3tgSplash.png</File>
   </SourceFiles>
 </SourceFileCollection>

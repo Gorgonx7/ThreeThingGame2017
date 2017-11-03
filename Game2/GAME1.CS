@@ -36,7 +36,8 @@ namespace Game2
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.mDimensions.Y;
         }
 
 
@@ -49,8 +50,9 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
-            
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.mDimensions.Y;
+
             //Content.Load<Texture2D>("assetname");
             base.Initialize();
         }
@@ -62,7 +64,8 @@ namespace Game2
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            ScreenManager.Instance.LoadContent(Content);
 
         }
 
@@ -73,6 +76,7 @@ namespace Game2
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            ScreenManager.Instance.UnloadContent();
         }
 
         /// <summary>
@@ -82,7 +86,7 @@ namespace Game2
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-
+            ScreenManager.Instance.Update(gameTime);
 
 
 
@@ -90,11 +94,10 @@ namespace Game2
         }
         protected override void Draw(GameTime gameTime)
         {
-
+            GraphicsDevice.Clear(Color.Magenta);
+            ScreenManager.Instance.Draw(spriteBatch);
             base.Draw(gameTime);
         }
-
-
 
 
     }

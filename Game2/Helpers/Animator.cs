@@ -46,8 +46,12 @@ namespace Game2
         {
 
             if (m_CurrentFrame > m_Frames.Length - 1)
-
-            if (m_CurrentFrame > m_Frames.Count)
+            {
+                m_CurrentFrame = 0;
+            }
+            Rectangle Holder = m_Frames[m_CurrentFrame];
+            m_CurrentFrame++;
+            return Holder;
 
         }
 

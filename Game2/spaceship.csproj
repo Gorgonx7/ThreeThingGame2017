@@ -45,6 +45,7 @@
     <Compile Include="Helpers\Animator.cs" />
     <Compile Include="Helpers\Console.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Pickup.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerController.cs" />
     <Compile Include="Program.cs" />

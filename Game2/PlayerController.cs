@@ -193,5 +193,21 @@ namespace Game2
                 }
                 return false;
             }
+        public bool rightMouseClick()
+        {
+            if(Mouse.GetState().RightButton == ButtonState.Pressed)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool enterButtonPressed()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                return true;
+            }
+            return false;
+        }
         }
  }

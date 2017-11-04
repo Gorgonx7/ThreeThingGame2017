@@ -20,7 +20,6 @@
 /processorParam:TextureFormat=Compressed
 /build:SpriteFont.spritefont
 
-
 #begin PlayerWalk.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -33,17 +32,6 @@
 /processorParam:TextureFormat=Color
 /build:PlayerWalk.png
 
-#begin splashscreentest.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:splashscreentest.png
 #begin 3tgSplash.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -55,7 +43,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:3tgSplash.png
-
 
 #begin idol.png
 /importer:TextureImporter

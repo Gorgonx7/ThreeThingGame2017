@@ -8,16 +8,16 @@ namespace Game2
     class Enemy
     {
         private Animator enemyAnimator;
-        
+        private static Random RNG = new Random();
         private Vector2 mPosition;
         private Vector2 mVelocity;
         private Texture2D mWalkTexture;
         private Texture2D mIdolTexture;
         private Rectangle mRectangle;
-        private bool mActive;
+        public bool mActive;
         private float mHealth = 100f;
         private float mDamage = 5f;
-        private float mSpeed = 25;
+        private float mSpeed = 75;
         private int alt = 5;
         private int timer = 0;
         private AnimationState mAnimationState;
@@ -73,6 +73,7 @@ namespace Game2
                 mVelocity.X = -mSpeed; mVelocity.Y = mSpeed;
                 mAnimationState = AnimationState.Left;
             }
+            
             mPosition = mPosition + mVelocity * 1 / 60;
         }
 

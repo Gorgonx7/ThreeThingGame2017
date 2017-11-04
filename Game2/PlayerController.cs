@@ -14,7 +14,7 @@ namespace Game2
         GamePadState mState;
         public PlayerController(int PlayerNumber)
         {
-            
+
 
             /*switch (PlayerNumber)
 
@@ -151,46 +151,47 @@ namespace Game2
             return false;
 
         }*/
-        public bool AKeyisDown()
-        {
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                return true;
-            }
-            return false;
         }
-        public bool SKeyisDown()
-        {
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            public bool AKeyisDown()
             {
-                return true;
+                if (Keyboard.GetState().IsKeyDown(Keys.A))
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
-        }
-        public bool DKeyisDown()
-        {
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            public bool SKeyisDown()
             {
-                return true;
+                if (Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
-        }
-        public bool WKeyisDown()
-        {
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            public bool DKeyisDown()
             {
-                return true;
+                if (Keyboard.GetState().IsKeyDown(Keys.D))
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            public bool WKeyisDown()
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    return true;
+                }
+                return false;
 
-        }
-        public bool leftMouseClick()
-        {
-            if(Mouse.GetState().LeftButton == ButtonState.Pressed)
-            {
-                return true;
             }
-            return false;  
+            public bool leftMouseClick()
+            {
+                if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+                {
+                    return true;
+                }
+                return false;
+            }
         }
-    }
-}
+ }

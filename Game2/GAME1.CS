@@ -25,9 +25,9 @@ namespace Game2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        Player player;
-
+        SceneManager manager;
+        
+        List<Enemy> Enemys;
         SpriteFont menuFont;
         Texture2D mainMenu, pauseMenu, deathScreen, background, oldStinker;
         // SoundEffect ;
@@ -44,8 +44,7 @@ namespace Game2
             graphics.PreferredBackBufferWidth = 1200;
 
 
-            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
-            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.mDimensions.Y;
+
 
         }
 
@@ -63,15 +62,32 @@ namespace Game2
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
             TextureDictionary.AddTexture(Content.Load<Texture2D>("PlayerWalk"), "playerWalk");
             TextureDictionary.AddTexture(Content.Load<Texture2D>("idol"), "playerIdol");
-            TextureDictionary.AddTexture(Content.Load<Texture2D>("Backgound1"), "Background");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("BJLibBackground"), "Background");
             TextureDictionary.AddTexture(Content.Load<Texture2D>("playerJab"), "playerJab");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("ninjaIdol"), "ninjaIdol");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("ninjaWalk"), "ninjaWalk");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("redBar"), "redBar");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("orangeBar"), "orangeBar");
+            TextureDictionary.AddTexture(Content.Load<Texture2D>("greenBar"), "greenBar");
             AudioDictionary.AddAudio(Content.Load<SoundEffect>("Punch"), "Punch");
-            player = new Player(1);
+            Random RNG = new Random();
+
+
+            List<Enemy>[] totem = new List<Enemy>[5];
+            for (int y = 0; y < 5; y++) {
+                List<Enemy> EnemyTestList = new List<Enemy>();
+                for (int x = 0; x < 20; x++)
+                {
+                    EnemyTestList.Add(new Enemy(new Vector2(1300 + RNG.Next(0,100), 400 + 50 * x)));
+                }
+                totem[y] = EnemyTestList;
+            }
+            List<Texture2D> Backgrounds = new List<Texture2D>();
+            Backgrounds.Add(TextureDictionary.FindTexture("Background"));
+            manager = new SceneManager(totem, Backgrounds);
             
 
-            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.mDimensions.X;
-            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.mDimensions.Y;
-
+       
             //Content.Load<Texture2D>("assetname");
 
             base.Initialize();
@@ -88,7 +104,7 @@ namespace Game2
 
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ScreenManager.Instance.LoadContent(Content);
+          
 
 
         }
@@ -102,7 +118,7 @@ namespace Game2
             // TODO: Unload any non ContentManager content here
 
 
-            ScreenManager.Instance.UnloadContent();
+           
 
         }
 
@@ -116,9 +132,9 @@ namespace Game2
 
 
 
-            player.Update();
 
-            ScreenManager.Instance.Update(gameTime);
+
+            manager.Update();
 
 
 
@@ -130,12 +146,12 @@ namespace Game2
 
             graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            spriteBatch.Draw(TextureDictionary.FindTexture("Background"), new Rectangle(0, 0, 1600, 800), new Rectangle(0, 0, 1600, 800), Color.White);
-            player.Draw(spriteBatch);
+            //spriteBatch.Draw(TextureDictionary.FindTexture("Background"), new Rectangle(0, 0, 1600, 800), new Rectangle(0, 0, 1600, 800), Color.White);
+            manager.Draw(spriteBatch);
             spriteBatch.End();
 
-            GraphicsDevice.Clear(Color.Magenta);
-            ScreenManager.Instance.Draw(spriteBatch);
+            
+           
 
             base.Draw(gameTime);
         }

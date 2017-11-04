@@ -170,3 +170,9 @@
 /processorParam:TextureFormat=Color
 /build:redBar.png
 
+#begin ChipBeat.wav
+/importer:WavImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ChipBeat.wav
+
